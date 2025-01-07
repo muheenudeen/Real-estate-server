@@ -1,4 +1,3 @@
-import { string } from 'joi'
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
@@ -12,7 +11,8 @@ const userSchema = new mongoose.Schema({
     },
     email:{
         type:String,
-        require:true
+        require:true,
+        unique: true
     },
     password:{
         type:String,
@@ -28,12 +28,11 @@ const userSchema = new mongoose.Schema({
         require:true,
         unique:true
     },
-    otp:{
-        type:String
+    isVerified:{
+        type:Boolean,
+        default:false
     },
-    otpexpires:{
-        type:Date
-    }
+    
 })
 
 export const userModel=mongoose.model('user',userSchema)

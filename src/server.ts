@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import { authRouter } from './router/authRouter/authRouter'
+import { authRouter } from './routes/authRoutes/authRoutes'
 import errorHandler from './middlewares/errorHadling'
 const PORT =process.env.PORT_NO || 4040
 
