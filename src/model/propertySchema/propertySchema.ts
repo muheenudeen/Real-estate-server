@@ -19,4 +19,6 @@ const propertySchema =new mongoose.Schema({
         require:true
     }
 
+
+    
 })
