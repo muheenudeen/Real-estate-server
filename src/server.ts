@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { authRouter } from './routes/authRoutes/authRoutes'
 import errorHandler from './middlewares/errorHadling'
+import { adminRouter } from './routes/adminRouter/adminRouter';
 const PORT =process.env.PORT_NO || 4040
 
 dotenv.config()
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 app.use('/api',authRouter)
+app.use('/api/admin',adminRouter)
 
 app.use(
     errorHandler as (
