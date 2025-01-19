@@ -7,8 +7,6 @@ import { generateOTP, saveOTP, verifyOTP } from "../../services/otpService";
 import { sendEmail } from "../../services/emailService";
 
 
-
-
 export const signUp = async (req: Request, res: Response) => {
     const { name, usertype, email, password } = req.body;
     const existingUser = await userModel.findOne({ email });
