@@ -23,11 +23,8 @@ const userSchema = new mongoose.Schema({
         enum:["user","admin"],
         default:"user"
     },
-    phone:{
-        type:String,
-        require:true,
-        unique:true
-    },
+    phone: { type: String, unique: true },
+
     isVerified:{
         type:Boolean,
         default:false
@@ -35,4 +32,4 @@ const userSchema = new mongoose.Schema({
     
 })
 
-export const userModel=mongoose.model('user',userSchema)
+export const User=mongoose.model('user',userSchema)

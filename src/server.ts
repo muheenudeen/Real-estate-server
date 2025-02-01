@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 import { authRouter } from './routes/authRoutes/authRoutes'
 import errorHandler from './middlewares/errorHadling'
 import { adminRouter } from './routes/adminRouter/adminRouter';
-const PORT =process.env.PORT_NO || 4040
+const PORT =process.env.PORT_NO || 5000
 
 dotenv.config()
 const app=express()

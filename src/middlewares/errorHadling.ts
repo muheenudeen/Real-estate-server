@@ -3,8 +3,6 @@ import { ValidationErrorItem } from 'joi';
 
 interface CustomError extends Error {
     statusCode?: number;
-    code?: number;
-    keyValue?: { [key: string]: string };
     name: string;
     error?: {
         isJoi?: boolean;
@@ -34,10 +32,6 @@ const errorHandler = (
 
         case err.name === 'JsonWebTokenError':
             return res.status(401).json({ message: 'Unauthorized: Invalid token.' });
-
-        case err.code === 11000:
-            const keyName = Object.keys(err.keyValue ?? {})[0];
-            return res.status(409).json({ message: `Given ${keyName} already exists` });
 
         case err.message === 'email already exist':
             return res.status(401).json({ message: 'Admin already exists' });

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { userModel } from "../../model/userModel/userModel";
+import { User } from "../../model/userModel/userModel";
 import AppError from "../../middlewares/AppError";
 
 
 export const getAllUsers = async(req:Request, res:Response)=>{
    
-    const users=await userModel.find()
+    const users=await User.find()
     if(!users){
         throw new AppError(`users not founded`)
     }
