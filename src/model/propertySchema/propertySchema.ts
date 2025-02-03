@@ -10,7 +10,7 @@ const propertySchema = new mongoose.Schema(
     image: { type: String, required: true },
     ownershipStatus: { type: String, enum: ["Single", "Joint"], required: true },
     availabilityStatus: { type: String, enum: ["Ready to move", "Under construction"], required: true },
-    ageOfProperty: { type: String, enum: ["0-1", "1-5", "5-10", "10+"], required: true },
+    ageOfProperty: { type: String, enum: ["0-1", "1-5", "5-10", "10+"], },
     preferredTo: { type: String, enum: ["Family", "Bachelor", "Anyone"], required: true },
     balconies: { type: String, default: 0 },
     furnishingStatus: { type: String, enum: ["Furnished", "Semi-Furnished", "Unfurnished"], required: true },
