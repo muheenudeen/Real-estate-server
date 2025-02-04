@@ -8,6 +8,7 @@ const comparePassword = async (password: string, hashedPassword: string): Promis
   return await bcrypt.compare(password, hashedPassword);
 };
 
+
 export const bcryptData = {
   hashPassword,
   comparePassword,
