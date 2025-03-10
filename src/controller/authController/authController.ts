@@ -50,6 +50,7 @@ export const verifyLoginOtp = async(req:Request, res:Response) =>{
   if(!verifyOTP(email, otp)){throw new AppError("invalid or expired OTP", 400)}
   const user = await User.findOne({email})
   if(!user){throw new AppError("user not founded", 404)}
+  console.log("User Found:", user)
   const token = generateToken(user._id.toString())
-  return res.status(200).json({success:true, message:"login successful",token})
+  return res.status(200).json({success:true, message:"login successful", data:user,token})
  }

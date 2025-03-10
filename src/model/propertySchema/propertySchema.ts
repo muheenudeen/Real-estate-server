@@ -4,37 +4,29 @@ const propertySchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true
     },
     description: {
       type: String,
-      required: true
     },
     price: {
       type: String,
-      required: true
     },
     bedrooms: {
       type: String,
-      required: true
     },
     bathrooms: {
       type: String,
-      required: true
     },
     image: {
       type: String,
-      required: true
     },
     ownershipStatus: {
       type: String,
       enum: ["Single", "Joint"], 
-      required: true
     },
     availabilityStatus: {
       type: String,
       enum: ["Ready to move", "Under construction"], 
-      required: true
     },
     ageOfProperty: {
       type: String,
@@ -43,7 +35,6 @@ const propertySchema = new mongoose.Schema(
     preferredTo: {
       type: String,
       enum: ["Family", "Bachelor", "Anyone"], 
-      required: true
     },
     balconies: {
       type: String,
@@ -52,25 +43,20 @@ const propertySchema = new mongoose.Schema(
     furnishingStatus: {
       type: String,
       enum: ["Furnished", "Semi-Furnished", "Unfurnished"],
-       required: true
-    },
+     },
     powerBackup: {
       type: String,
       enum: ["Full", "Partial", "None"], 
-      required: true
     },
     roadAccessibility: {
       type: String,
       enum: ["Heavy vehicle", "Light vehicle", "No vehicle access"],
-       required: true
-    },
+     },
     totalFloors: {
       type: String,
-      required: true
     },
     floorNo: {
       type: String,
-      required: true
     },
     propertyFacing: {
       type: String
@@ -91,31 +77,25 @@ const propertySchema = new mongoose.Schema(
     location: {
       state: {
         type: String,
-        required: true
-      },
+        },
       district: {
         type: String,
-        required: true
-      },
+        },
       city: {
         type: String,
-        required: true
-      },
+        },
       locality: {
         type: String,
-        required: true
-      },
+        },
       zipCode: {
         type: String,
-        required: true
-      },
+        },
       landmark: {
         type: String
       },
       fullAddress: {
         type: String,
-        required: true
-      },
+        },
     },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },

@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 
 export const addProperty = async (req: Request, res: Response) => {
-  
+  console.log(req.body)
         const {
             title, description, location, bathrooms, bedrooms, price, image, userId,
             ownershipStatus, availabilityStatus, ageOfProperty, preferredTo, balconies,
@@ -22,10 +22,6 @@ export const addProperty = async (req: Request, res: Response) => {
         const user = await User.findById(userId);
         if (!user) {
             throw new AppError("User not found, please login", 404);
-        }
-
-        if (!title || !description || !location || !price || !image || !userId) {
-            return res.status(400).json({ success: false, message: "All required fields must be provided" });
         }
 
         const newProperty = new Property({
