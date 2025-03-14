@@ -84,11 +84,11 @@ export const getUserProperty=async(req:Request, res:Response) =>{
         throw new AppError("user not found, please login")
     }
 
-    const userProperty=await Property.find({ userId:id })
+    const propertes=await Property.find({ userId:id })
 console.log({woner:id});
 console.log({userId:id});
 
-    return res.status(201).json({success:true, message:"user property fetch successful",userProperty})
+    return res.status(201).json({success:true, message:"user property fetch successful",propertes})
 }
 
 
